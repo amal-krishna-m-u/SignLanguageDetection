@@ -1,8 +1,11 @@
+from django.shortcuts import render
 import cv2
 import numpy as np
 import mediapipe as mp
 from keras.models import load_model
 import argparse
+# Create your views here.
+
 def detection_view(request):
     # ==================================== Helper function ====================================
     mp_holistic = mp.solutions.holistic  # Holistic model
