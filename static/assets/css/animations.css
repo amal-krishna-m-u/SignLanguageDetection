@@ -1,0 +1,315 @@
+#event-content {
+  position: relative;
+  height: 250px;
+  background: rgb(255, 255, 255);
+  width: auto;
+  max-width: 500px;
+  margin: 0 auto;
+
+  -webkit-box-shadow: -8px 6px 25px 6px rgba(168,168,168,0.73);
+-moz-box-shadow: -8px 6px 25px 6px rgba(168,168,168,0.73);
+border-radius: var(--bs-card-border-radius);
+
+box-shadow: 2px 2px 20px rgb(0 0 0 / 30%);
+border: none;
+}
+#event-content .closeBtn {
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  display: block;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+}
+#event-content .closeBtn:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* ------ Fade in & scale ------ */
+.fade-in-scale.mfp-bg {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+/* overlay animate in */
+.fade-in-scale.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+
+/* overlay animate out */
+.fade-in-scale.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+/* content at start */
+.fade-in-scale.mfp-wrap .mfp-content {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+/* content animate it */
+.fade-in-scale.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+/* content animate out */
+.fade-in-scale.mfp-wrap.mfp-removing .mfp-content {
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+  opacity: 0;
+}
+
+/* ------ Slide in (top) ------ */
+.slide-in-top.mfp-bg {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+/* overlay animate in */
+.slide-in-top.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+
+/* overlay animate out */
+.slide-in-top.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+/* content at start */
+.slide-in-top.mfp-wrap .mfp-content {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  -webkit-transform: translateY(-30%);
+  -moz-transform: translateY(-30%);
+  -o-transform: translateY(-30%);
+  -ms-transform: translateY(-30%);
+  transform: translateY(-30%);
+}
+
+/* content animate it */
+.slide-in-top.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -o-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* content animate out */
+.slide-in-top.mfp-wrap.mfp-removing .mfp-content {
+  -webkit-transform: translateY(-30%);
+  -moz-transform: translateY(-30%);
+  -o-transform: translateY(-30%);
+  -ms-transform: translateY(-30%);
+  transform: translateY(-30%);
+  opacity: 0;
+}
+
+/* ------ 3D Flip (horizontal) ------ */
+.flip-h-3d.mfp-bg {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+/* overlay animate in */
+.flip-h-3d.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+
+/* overlay animate out */
+.flip-h-3d.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+.flip-h-3d .mfp-container {
+  -webkit-perspective: 1300px;
+  -moz-perspective: 1300px;
+  perspective: 1300px;
+}
+
+/* content at start */
+.flip-h-3d.mfp-wrap .mfp-content {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateY(-70deg);
+  -moz-transform: rotateY(-70deg);
+  -ms-transform: rotateY(-70deg);
+  transform: rotateY(-70deg);
+}
+
+/* content animate it */
+.flip-h-3d.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+
+/* content animate out */
+.flip-h-3d.mfp-wrap.mfp-removing .mfp-content {
+  -webkit-transform: rotateY(-70deg);
+  -moz-transform: rotateY(-70deg);
+  -ms-transform: rotateY(-70deg);
+  transform: rotateY(-70deg);
+  opacity: 0;
+}
+
+/* ------ Rotate Carouse (left) ------ */
+.rotate-carouse-left.mfp-bg {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+/* overlay animate in */
+.rotate-carouse-left.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+
+/* overlay animate out */
+.rotate-carouse-left.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+/* content at start */
+.rotate-carouse-left.mfp-wrap .mfp-content {
+  opacity: 0;
+}
+
+/* content animate it */
+.rotate-carouse-left.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+  -webkit-transform-origin: 0% 50%;
+  -moz-transform-origin: 0% 50%;
+  transform-origin: 0% 50%;
+  -webkit-animation: rotateCarouselLeftIn 0.8s both ease;
+  -moz-animation: rotateCarouselLeftIn 0.8s both ease;
+  animation: rotateCarouselLeftIn 0.8s both ease;
+}
+
+/* content animate out */
+.rotate-carouse-left.mfp-wrap.mfp-removing .mfp-content {
+  -webkit-transform-origin: 100% 50%;
+  -moz-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-animation: rotateCarouselLeftOut 0.8s both ease;
+  -moz-animation: rotateCarouselLeftOut 0.8s both ease;
+  animation: rotateCarouselLeftOut 0.8s both ease;
+  opacity: 0;
+}
+
+@-webkit-keyframes rotateCarouselLeftOut {
+  to {
+    opacity: 0.3;
+    -webkit-transform: translateX(-150%) scale(0.4) rotateY(-65deg);
+  }
+}
+@-moz-keyframes rotateCarouselLeftOut {
+  to {
+    opacity: 0.3;
+    -moz-transform: translateX(-150%) scale(0.4) rotateY(-65deg);
+  }
+}
+@keyframes rotateCarouselLeftOut {
+  to {
+    opacity: 0.3;
+    transform: translateX(-150%) scale(0.4) rotateY(-65deg);
+  }
+}
+@-webkit-keyframes rotateCarouselLeftIn {
+  from {
+    opacity: 0.3;
+    -webkit-transform: translateX(200%) scale(0.4) rotateY(65deg);
+  }
+}
+@-moz-keyframes rotateCarouselLeftIn {
+  from {
+    opacity: 0.3;
+    -moz-transform: translateX(200%) scale(0.4) rotateY(65deg);
+  }
+}
+@keyframes rotateCarouselLeftIn {
+  from {
+    opacity: 0.3;
+    transform: translateX(200%) scale(0.4) rotateY(65deg);
+  }
+}
+@-webkit-keyframes rotateCarouselRightOut {
+  to {
+    opacity: 0.3;
+    -webkit-transform: translateX(200%) scale(0.4) rotateY(65deg);
+  }
+}
+@-moz-keyframes rotateCarouselRightOut {
+  to {
+    opacity: 0.3;
+    -moz-transform: translateX(200%) scale(0.4) rotateY(65deg);
+  }
+}
+@keyframes rotateCarouselRightOut {
+  to {
+    opacity: 0.3;
+    transform: translateX(200%) scale(0.4) rotateY(65deg);
+  }
+}
+@-webkit-keyframes rotateCarouselRightIn {
+  from {
+    opacity: 0.3;
+    -webkit-transform: translateX(-200%) scale(0.4) rotateY(-65deg);
+  }
+}
+@-moz-keyframes rotateCarouselRightIn {
+  from {
+    opacity: 0.3;
+    -moz-transform: translateX(-200%) scale(0.4) rotateY(-65deg);
+  }
+}
+@keyframes rotateCarouselRightIn {
+  from {
+    opacity: 0.3;
+    transform: translateX(-200%) scale(0.4) rotateY(-65deg);
+  }
+}
