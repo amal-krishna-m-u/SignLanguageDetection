@@ -93,6 +93,60 @@ def detection_view(request):
 
     capture = cv2.VideoCapture(0) #grab camera device default -- usually webcam -- device 0 is iphone and device 1 is macbook camera
 
+    # def generate_html():
+    #     html_content = """
+    #     <!DOCTYPE html>
+    #     <html lang="en">
+    #     <head>
+    #         <!-- Add your existing head content here -->
+    #     </head>
+    #     <body>
+    #         <div class="container">
+    #             <div class="content">
+    #                 <!-- Button to go back -->
+    #                 <a href="/" class="button" style="margin-top: 20px;">
+    #                     <span class="actual-text">&nbsp;Go Back&nbsp;</span>
+    #                     <span class="hover-text" aria-hidden="true">&nbsp;Go Back&nbsp;</span>
+    #                 </a>
+
+    #                 <!-- Live feed container -->
+    #                 <div id="live-feed-container" style="margin-top: 20px;">
+    #                     <img id="live-feed" src="" alt="Live Feed">
+    #                 </div>
+
+    #                 <!-- Script for updating the live feed -->
+    #                 <script>
+    #                     // Function to update the live feed using server-sent events
+    #                     function updateLiveFeed() {
+    #                         var liveFeed = document.getElementById('live-feed');
+    #                         var eventSource = new EventSource("/your-detection-view-url/");
+
+    #                         eventSource.onmessage = function (event) {
+    #                             liveFeed.src = 'data:image/jpeg;base64,' + event.data;
+    #                         };
+
+    #                         eventSource.onerror = function (error) {
+    #                             console.error('EventSource failed:', error);
+    #                             eventSource.close();
+    #                         };
+    #                     }
+
+    #                     // Call the function when the page loads
+    #                     window.onload = function () {
+    #                         updateLiveFeed();
+    #                     };
+    #                 </script>
+    #             </div>
+    #         </div>
+    #     </body>
+    #     </html>
+    #     """
+    #     return html_content
+
+
+
+
+
     #Set mediapipe model
     def generate_frames():
         nonlocal sequence
@@ -102,6 +156,11 @@ def detection_view(request):
         with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=0.5) as holistic:
             while capture.isOpened():
                 return_, frame = capture.read()
+                key = cv2.waitKey(1) & 0xFF
+                if key == ord('q'):
+                    break
+
+
                 image, results = mediapipe_detection(frame, holistic)
                 draw_landmarks(image, results)
 
