@@ -77,7 +77,7 @@ def detection_view(request):
     # Load the model from the provided path
     model = load_model("Sign_language.h5")
 
-    # Actions that we try to detect
+    # # Actions that we try to detect
     actions = np.array(['Hello', 'Thanks', 'ILoveYou'])
     colors = [(245,117,16),(117,245,16),(16,117,245)] #different colours for different actions
 
@@ -184,6 +184,9 @@ def detection_view(request):
                         sentence = sentence[-1:]
 
                     image = prob_visualisation(res, actions, image, colors)
+                    cv2.rectangle(image, (0,0), (640, 40), (245, 117, 16), -1)
+                    cv2.putText(image, ' '.join(sentence), (3,30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 2, cv2.LINE_AA)
+        
 
                 # Convert the image to JPEG format
                 _, buffer = cv2.imencode('.jpg', image)
@@ -197,7 +200,7 @@ def detection_view(request):
                 time.sleep(0.1)
 
     # Use StreamingHttpResponse to send frames as a streaming response
-    return StreamingHttpResponse(generate_frames(), content_type='multipart/x-mixed-replace; boundary=frame')
+    return StreamingHttpResponse(generate_frames(), content_type='multipart/x-mixed-replace; boundary=frame') 
 
 
 
